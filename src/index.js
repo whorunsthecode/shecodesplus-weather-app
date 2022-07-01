@@ -8,7 +8,7 @@ function currentDate() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[now.getDay()];
   let hours = now.getHours();
@@ -26,15 +26,16 @@ let date = document.querySelector("#current-date");
 date.innerHTML = currentDate();
 
 // Search for a city//
-let cityInput = document.querySelector("#city-input");
-let city = document.querySelector("#city-name");
 
 function showCity(event) {
   event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  let city = document.querySelector("#city-name");
   city.innerHTML = cityInput.value;
-}
-if (cityInput.value) {
-  city.innerHTML = `${cityInput.value}`;
+  let apiKey = "edafb8e14d32a1a359f2e6ca3eb0fdc2";
+  let cityName = `${cityInput.value}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showTemperature);
 }
 
 let form = document.querySelector("#search-form");
@@ -59,15 +60,12 @@ let temperatureCelsius = document.querySelector("#Celsius");
 temperatureCelsius.addEventListener("click", convertToCelsius);
 
 // Current Temperature//
-let apiKey = "edafb8e14d32a1a359f2e6ca3eb0fdc2";
-let cityName = `${cityInput.value}`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
-
 function showTemperature(response) {
   console.log(response);
   let temperatureCurrent = document.querySelector("#current-temperature");
-  temperatureCurrent.innerHTML = Math.round(response.data.name);
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  temperatureCurrent.innerHTML = Math.round(response.data.main.temp);
+  let city = document.querySelector("#city-name");
+  city.innerHTML = response.data.name;
 }
 
 // Current Location //
