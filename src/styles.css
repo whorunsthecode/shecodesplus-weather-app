@@ -193,3 +193,8 @@ a:active {
     sans-serif;
   text-align: center;
 }
+
+.form-control {
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+}
