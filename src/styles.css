@@ -187,3 +187,9 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+
+.byKarmen {
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  text-align: center;
+}
