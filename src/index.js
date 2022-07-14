@@ -60,6 +60,12 @@ function convertToFahrenheit(event) {
   temperatureCurrent.innerHTML = Math.round(temperatureFahrenheit);
 }
 
+let temperatureCelsius = document.querySelector(".celsius-link");
+temperatureCelsius.addEventListener("click", convertToCelsius);
+
+let temperatureFahrenheit = document.querySelector(".fahrenheit-link");
+temperatureFahrenheit.addEventListener("click", convertToFahrenheit);
+
 // Current Temperature//
 function showCurrentTemperature(response) {
   console.log(response);
@@ -68,12 +74,6 @@ function showCurrentTemperature(response) {
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
 }
-
-let temperatureCelsius = document.querySelector(".celsius-link");
-temperatureCelsius.addEventListener("click", convertToCelsius);
-
-let temperatureFahrenheit = document.querySelector(".fahrenheit-link");
-temperatureFahrenheit.addEventListener("click", convertToFahrenheit);
 
 // Current Location //
 function showPosition(position) {
