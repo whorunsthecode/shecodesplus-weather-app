@@ -32,8 +32,12 @@ function showCity(event) {
   let cityInput = document.querySelector("#city-input");
   let city = document.querySelector("#city-name");
   city.innerHTML = cityInput.value;
-  let apiKey = "edafb8e14d32a1a359f2e6ca3eb0fdc2";
   let cityName = `${cityInput.value}`;
+  searchCity(cityName);
+}
+
+function searchCity(cityName) {
+  let apiKey = "edafb8e14d32a1a359f2e6ca3eb0fdc2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showCurrentTemperature);
 }
@@ -45,11 +49,10 @@ form.addEventListener("submit", showCity);
 
 function convertToCelsius(event) {
   event.preventDefault();
+  let temperatureCurrent = document.querySelector("#current-temperature");
   temperatureFahrenheit.classList.remove("active-link");
   temperatureCelsius.classList.add("active-link");
-  let temperatureCelsius = Math.round(((temperatureFahrenheit - 32) * 5) / 9);
-  let temperatureCurrent = document.querySelector("#current-temperature");
-  temperatureCurrent.innerHTML = temperatureCelsius;
+  temperatureCurrent.innerHTML = Math.round(celsiusTemp);
 }
 
 function convertToFahrenheit(event) {
@@ -57,7 +60,8 @@ function convertToFahrenheit(event) {
   let temperatureCurrent = document.querySelector("#current-temperature");
   temperatureFahrenheit.classList.add("active-link");
   temperatureCelsius.classList.remove("active-link");
-  temperatureCurrent.innerHTML = Math.round(temperatureFahrenheit);
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureCurrent.innerHTML = Math.round(fahrenheitTemp);
 }
 
 let temperatureCelsius = document.querySelector(".celsius-link");
@@ -73,6 +77,7 @@ function showCurrentTemperature(response) {
   temperatureCurrent.innerHTML = Math.round(response.data.main.temp);
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
+  celsiusTemp = response.data.main.temp;
 }
 
 // Current Location //
@@ -91,3 +96,6 @@ function getCurrentCity() {
 
 let currentCity = document.querySelector("#current-city");
 currentCity.addEventListener("click", getCurrentCity);
+
+let celsiusTemp = null;
+searchCity("Hong Kong");
