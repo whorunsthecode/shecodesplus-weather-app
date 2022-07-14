@@ -12,10 +12,9 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/71e1fd6e20.js"
       crossorigin="anonymous"
@@ -27,7 +26,7 @@
     <div class="container px-1 px-sm-4 py-5 mx-auto">
       <div class="row d-flex justify-content-center">
         <div class="card text-center pt-4 border-0">
-          <form class="d-flex" role="search" id="search-form">
+          <form class="d-flex " role="search" id="search-form" >
             <input
               type="text"
               role="search"
@@ -37,11 +36,13 @@
               aria-label="Search"
               id="city-input"
             />
+
             <button type="submit" class="button-8" role="button">Search</button>
-            <span class="msg"></span> &nbsp;
+      </form>
+            <br />
             <div class="current-city">
-              <button id="current-city" type="button" class="button-26">
-                Current
+              <button id="current-city" type="button" class="button-21" role="button">
+                Your current location 📍
               </button>
             </div>
           </form>
@@ -49,9 +50,11 @@
 
          <h4 class="mb-0" id="city-name">Hong Kong</h4>
           <small class="text-muted mb-3" id="current-date">Sunday 15:32</small>
-         <span style="float: left;">
-            <img class="bigsymbol-img" src="https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/clear-day.svg"></i></span>
-          <div>
+         <div>
+            <img style="padding: 0;" class="bigsymbol-img" src="https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/clear-day.svg"></i></div>
+          
+          
+            <div>
             <span class="large-font" id="current-temperature">29</span
             ><span class="units"
               ><span class="Celsius-units"
