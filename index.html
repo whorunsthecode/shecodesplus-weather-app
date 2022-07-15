@@ -23,10 +23,7 @@
   </head>
 
   <body>
-    <div class="container px-1 px-sm-4 py-5 mx-auto">
-      <div class="row d-flex justify-content-center">
-        <div class="card text-center pt-4 border-0">
-          <form class="d-flex " role="search" id="search-form" >
+      <div class="row d-flex justify-content-center px-1 px-sm-4 py-5 mx-auto"><form class="d-flex " role="search" id="search-form" >
             <input
               type="text"
               role="search"
@@ -36,25 +33,31 @@
               aria-label="Search"
               id="city-input"
             />
+           
 
             <button type="submit" class="button-8" role="button">Search</button>
       </form>
-            <br />
+            <br /> <br />
             <div class="current-city">
               <button id="current-city" type="button" class="button-21" role="button">
                 Your current location 📍
               </button>
             </div>
-          </form>
+          
+    <div class="container px-1 px-sm-4 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+        <div class="card text-center pt-4 border-0">
+        
           <br />
 
          <h4 class="mb-0" id="city-name">Hong Kong</h4>
           <small class="text-muted mb-3" id="current-date">Sunday 15:32</small>
          <div>
             <img style="padding: 0;" class="bigsymbol-img" src="https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/clear-day.svg"></i></div>
-          
-          
-            <div>
+            <div class="current-condition-text-wrapper">
+          <span class="current-condition-text"></span>
+        </div>
+        <div>
             <span class="large-font" id="current-temperature">29</span
             ><span class="units"
               ><span class="Celsius-units"
@@ -65,6 +68,20 @@
                 ><a href="#" id="Fahrenheit" class="active-link fahrenheit-link">°F</a></span
               ></span
             >
+            <div class="current-condition-text-wrapper">
+          <span class="current-condition-text">Mostly cloudy</span>
+        </div>
+        <div class="row extra-details">
+          <div class="col">
+            <img src="https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill-static/final/wind.svg" id="current-wind-icon" />
+            <div class="current-wind">8 m/h</div>
+          </div>
+          <div class="col">
+            <img src="https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill-static/final/humidity.svg" id="current-humidity-icon" />
+            <div class="current-humidity">54%</div>
+          </div>
+          
+            
           </div>
           <br  />
          

@@ -41,7 +41,7 @@ body {
 }
 
 .large-font {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 500;
 }
 
@@ -74,6 +74,10 @@ body {
   position: relative;
 }
 
+.form-control {
+  font-size: 13px;
+}
+
 /* Submit Button */
 .button-8 {
   background-color: white;
@@ -84,7 +88,7 @@ body {
   color: #39739d;
   cursor: pointer;
   display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.15385;
@@ -147,7 +151,7 @@ input {
   cursor: pointer;
   display: inline-flex;
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 13px;
   height: auto;
   justify-content: center;
   line-height: 1.5;
@@ -194,6 +198,20 @@ a:active {
   text-decoration: none;
 }
 
+#current-wind-icon,
+#current-humidity-icon {
+  max-width: 100px;
+  max-height: 70px;
+}
+
+.current-image-wrapper {
+  margin: 0 auto;
+}
+
+.current-image {
+  max-width: 160px;
+  margin-top: -40px;
+}
 .byKarmen {
   font-family: "Poppins", sans-serif;
   text-align: center;
