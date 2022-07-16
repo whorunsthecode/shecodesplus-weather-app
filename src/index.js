@@ -79,7 +79,7 @@ function showCurrentTemperature(response) {
   city.innerHTML = response.data.name;
   celsiusTemp = response.data.main.temp;
 
-  let currentDescription = response.data.weather[0].main;
+  let cityDescription = response.data.weather[0].main;
   let cityWind = Math.round(response.data.wind.speed);
   let cityHumidity = response.data.main.humidity;
   let description = document.querySelector(".current-condition-text");
@@ -89,8 +89,6 @@ function showCurrentTemperature(response) {
 
   let humidity = document.querySelector(".current-humidity");
   humidity.innerHTML = `${cityHumidity}%`;
-
-  getForecast(response.data.coord);
 }
 
 // Current Location //
