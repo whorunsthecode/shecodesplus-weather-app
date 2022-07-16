@@ -79,18 +79,17 @@ function showCurrentTemperature(response) {
   city.innerHTML = response.data.name;
   celsiusTemp = response.data.main.temp;
 
+  let currentDescription = response.data.weather[0].main;
+  let cityWind = Math.round(response.data.wind.speed);
+  let cityHumidity = response.data.main.humidity;
   let description = document.querySelector(".current-condition-text");
   description.innerHTML = cityDescription;
-
   let wind = document.querySelector(".current-wind");
   wind.innerHTML = `${cityWind} m/h`;
 
   let humidity = document.querySelector(".current-humidity");
   humidity.innerHTML = `${cityHumidity}%`;
 
-  let currentDescription = response.data.weather[0].main;
-  let cityWind = Math.round(response.data.wind.speed);
-  let cityHumidity = response.data.main.humidity;
   getForecast(response.data.coord);
 }
 
@@ -110,8 +109,6 @@ function getCurrentCity() {
 
 let currentCity = document.querySelector("#current-city");
 currentCity.addEventListener("click", getCurrentCity);
-
-// Display Weather Description, Humidity and Windspeed //
 
 //
 let celsiusTemp = null;

@@ -134,7 +134,8 @@ input {
 }
 
 #current-city {
-  width: -20px;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Current Button */
