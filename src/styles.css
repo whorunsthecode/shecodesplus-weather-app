@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(white, rgb(244, 233, 203), #a4d1da, #94c9ef);
+  background: linear-gradient(rgb(244, 233, 203), #a4d1da, #94c9ef);
   height: 100%;
   background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
@@ -28,7 +28,7 @@ body {
 }
 
 .block:hover {
-  background-color: #f6efd9;
+  background-color: #fbf9dd;
 }
 
 .city-symbol {
@@ -145,8 +145,8 @@ input {
 .button-21 {
   align-items: center;
   appearance: none;
-  background-color: #98bae7;
-  background-image: linear-gradient(1deg, #4f58fd, #98bae7 99%);
+  background-color: #fabc40;
+  background-image: linear-gradient(1deg, #fcad0e, #fabc40 99%);
   background-size: calc(100% + 20px) calc(100% + 20px);
   border-radius: 100px;
   border-width: 0;
