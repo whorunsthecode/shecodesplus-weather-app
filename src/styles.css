@@ -38,9 +38,9 @@ body {
 }
 
 .large-font {
-  font-size: 70px;
+  font-size: 65px;
   font-weight: 300;
-  padding: -10%;
+  padding: -50%;
 }
 
 .symbol-img {
@@ -257,7 +257,7 @@ a:active {
 .byKarmen {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  color: blue;
+  color: #0a5c90;
 }
 
 .footer {

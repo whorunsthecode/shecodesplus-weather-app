@@ -1,5 +1,6 @@
 // Date//
-function currentDate() {
+function currentDate(timestamp) {
+  let date = new Date(timestamp);
   let now = new Date();
   let days = [
     "Sunday",
@@ -22,9 +23,9 @@ function currentDate() {
   let today = `${day} ${hours}:${minutes}`;
   return today;
 }
+
 let date = document.querySelector("#current-date");
 date.innerHTML = currentDate();
-
 // Search for a city//
 
 function showCity(event) {
@@ -82,13 +83,14 @@ function showCurrentTemperature(response) {
   let cityDescription = response.data.weather[0].main;
   let cityWind = Math.round(response.data.wind.speed);
   let cityHumidity = response.data.main.humidity;
+  let cityIcon = response.data.weather[0].icon;
+
   let description = document.querySelector(".current-condition-text");
   description.innerHTML = cityDescription;
   let wind = document.querySelector(".current-wind");
   wind.innerHTML = `${cityWind} m/h`;
-
-  let humidity = document.querySelector(".current-humidity");
-  humidity.innerHTML = `${cityHumidity}%`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `images/${cityIcon}.svg`);
 }
 
 // Current Location //
