@@ -9,7 +9,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
-.card {
+.card,
+.form {
   width: 500px;
 }
 
@@ -37,8 +38,9 @@ body {
 }
 
 .large-font {
-  font-size: 55px;
-  font-weight: 800;
+  font-size: 70px;
+  font-weight: 300;
+  padding: -10%;
 }
 
 .symbol-img {
@@ -53,7 +55,9 @@ body {
 
 .text-muted {
   font-size: 18px;
+  color: black;
 }
+
 @media screen and (max-width: 500px) {
   .card {
     width: 92%;
@@ -66,7 +70,7 @@ body {
 
 .bigsymbol-img {
   width: 160px;
-  height: 130px;
+  height: 150px;
   padding: -10px;
 }
 
@@ -191,11 +195,28 @@ input {
   color: #a1b9e3;
 }
 
-.celsius-link,
-.fahrenheit-link {
-  color: #4e88ee;
+.fahrenheit-link,
+.celsius-link {
+  position: absolute;
+  left: 10px;
+  text-decoration: none;
+  color: rgb(132, 130, 130);
+  transition: all 150ms ease-in-out;
 }
 
+.fahrenheit-link:hover,
+.celsius-link:hover {
+  font-size: 22px;
+  color: black;
+}
+
+.fahrenheit-link {
+  top: 60px;
+}
+
+.celsius-link {
+  top: 30px;
+}
 .celsius-link:hover,
 .fahrenheit-link:hover {
   font-weight: bold;
@@ -214,12 +235,9 @@ a:active {
   text-decoration: none;
 }
 
-#current-wind-icon,
-#current-humidity-icon {
-  max-width: 100px;
-  max-height: 70px;
+.windspeed {
+  color: grey;
 }
-
 .current-image-wrapper {
   margin: 0 auto;
 }
@@ -232,11 +250,20 @@ a:active {
 .col {
   border: thin solid #e4dbf8;
   border-radius: 20px;
-  margin: 20px;
-  padding: 15px 15px;
+  margin: 80px;
+  padding: 0;
 }
 
 .byKarmen {
   font-family: "Poppins", sans-serif;
   text-align: center;
+  color: blue;
+}
+
+.footer {
+  color: blue;
+}
+
+.footer:hover {
+  text-decoration: underline;
 }
