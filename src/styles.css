@@ -196,7 +196,7 @@ input {
 .fahrenheit-link,
 .celsius-link {
   position: absolute;
-  right: 190px;
+
   text-decoration: none;
   color: rgb(132, 130, 130);
   transition: all 150ms ease-in-out;
@@ -210,17 +210,19 @@ input {
 }
 
 .current-temp-container {
-  justify-content: center;
+  left: -15px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .fahrenheit-link {
-  position: absolute;
-  top: 300px;
+  top: 15px;
+  right: -20px;
 }
 
 .celsius-link {
-  position: absolute;
-  top: 270px;
+  top: -15px;
+  right: -22px;
 }
 
 a:link {
