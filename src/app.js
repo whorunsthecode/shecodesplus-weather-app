@@ -113,16 +113,23 @@ let currentCity = document.querySelector("#current-city");
 currentCity.addEventListener("click", getCurrentCity);
 
 // Forecast //
+function formatDay(timestamp) {
+  let futureDate = new Date(timestamp * 1000);
+  let day = futureDate.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row d-flex px-3 mt-auto" id="forecast">`;
+  let forecastHTML = `<div class="row d-flex px-3 mt-auto flex-column" id="forecast">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="d-flex flex-column block ">
+        `<div class="block col-5">
                             <small class="text-muted mb-0">${formatDay(
                               forecastDay.dt
                             )}</small>
@@ -157,13 +164,8 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function formatDay(timestamp) {
-  let futureDate = new Date(timestamp * 1000);
-  let day = futureDate.getDay();
-  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  return days[day];
-}
 //
 
 let celsiusTemp = null;
 searchCity("Hong Kong");
+displayForecast();
