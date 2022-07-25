@@ -9,6 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
+
 .card,
 .form {
   width: 500px;
@@ -40,7 +41,8 @@ body {
 .large-font {
   font-size: 65px;
   font-weight: 300;
-  padding: -50%;
+  line-height: 25px;
+  text-align: center;
 }
 
 .symbol-img {
@@ -51,6 +53,7 @@ body {
 .mb-0 {
   font-size: 28px;
   font-weight: bold;
+  margin: 10px;
 }
 
 .text-muted {
@@ -59,7 +62,8 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  .card {
+  .card,
+  .form {
     width: 92%;
   }
 }
@@ -167,7 +171,7 @@ input {
   padding: 6px 20px;
   position: relative;
   text-align: center;
-  text-decoration: none;
+  font-weight: bold;
   transition: background-color 0.2s, background-position 0.2s;
   user-select: none;
   -webkit-user-select: none;
@@ -202,18 +206,20 @@ input {
 .celsius-link:hover {
   font-size: 22px;
   color: black;
+  font-weight: bold;
 }
 
+.current-temp-container {
+  justify-content: center;
+}
 .fahrenheit-link {
-  top: 350px;
+  position: absolute;
+  top: 300px;
 }
 
 .celsius-link {
-  top: 320px;
-}
-.celsius-link:hover,
-.fahrenheit-link:hover {
-  font-weight: bold;
+  position: absolute;
+  top: 270px;
 }
 
 a:link {
@@ -252,6 +258,7 @@ a:active {
   font-family: "Poppins", sans-serif;
   text-align: center;
   color: #0a5c90;
+  padding: 17px;
 }
 
 .footer {
