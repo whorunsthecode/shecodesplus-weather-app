@@ -91,6 +91,8 @@ function showCurrentTemperature(response) {
   wind.innerHTML = `${cityWind} m/h`;
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `images/${cityIcon}.svg`);
+
+  getForecast(response.data.coord);
 }
 
 // Current Location //
@@ -110,6 +112,58 @@ function getCurrentCity() {
 let currentCity = document.querySelector("#current-city");
 currentCity.addEventListener("click", getCurrentCity);
 
+// Forecast //
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row d-flex px-3 mt-auto" id="forecast">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="d-flex flex-column block ">
+                            <small class="text-muted mb-0">${formatDay(
+                              forecastDay.dt
+                            )}</small>
+         
+                <div class="text-center card-content">
+                  <div>
+                    <img
+                      src="images/${forecastDay.weather[0].icon}.svg"
+                   class="symbol-img"
+                      alt="..."
+                    />
+                  </div><span class="card-temp-max">${Math.round(
+                    forecastDay.temp.max
+                  )}°</span>
+                  
+                </div>
+              </div>
+            </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+
+  convertToCelsius();
+}
+
+function getForecast(coordinates) {
+  let apiKey = `edafb8e14d32a1a359f2e6ca3eb0fdc2`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let futureDate = new Date(timestamp * 1000);
+  let day = futureDate.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
 //
+
 let celsiusTemp = null;
 searchCity("Hong Kong");

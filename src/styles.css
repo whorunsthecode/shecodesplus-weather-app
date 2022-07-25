@@ -212,6 +212,7 @@ input {
 .current-temp-container {
   justify-content: center;
 }
+
 .fahrenheit-link {
   position: absolute;
   top: 300px;
