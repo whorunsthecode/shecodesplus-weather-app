@@ -18,7 +18,7 @@ body {
 .block {
   width: 20%;
   cursor: pointer;
-  padding: 10px 0px;
+  border-color: #a4d1da;
 }
 
 .first-block {
@@ -27,10 +27,6 @@ body {
 
 .last-block {
   border-bottom-right-radius: 5px;
-}
-
-.block:hover {
-  background-color: #fbf9dd;
 }
 
 .city-symbol {
@@ -257,6 +253,14 @@ a:active {
   padding: 0;
 }
 
+.card-temp-min {
+  color: rgb(136, 136, 136);
+}
+
+.line-break {
+  border-top: thin solid #b7d6d6;
+  margin-bottom: 20px;
+}
 .byKarmen {
   font-family: "Poppins", sans-serif;
   text-align: center;
