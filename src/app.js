@@ -89,8 +89,7 @@ function showCurrentTemperature(response) {
   let wind = document.querySelector(".current-wind");
   wind.innerHTML = `${cityWind} m/h`;
   let icon = document.querySelector("#icon");
-  icon.setAttribute("src", `images/${cityIcon}.svg`);
-
+  icon.setAttribute("src", `../images/${cityIcon}.svg`);
   getForecast(response.data.coord);
 }
 
@@ -136,8 +135,8 @@ function displayForecast(response) {
          
                 <div class="text-center card-content">
                   <div>
-                    <img
-                      src="images/${forecastDay.weather[0].icon}.svg"
+                      <img
+                      src="../images/${forecastDay.weather[0].icon}.svg"
                    class="symbol-img"
                       alt="..."
                     />
