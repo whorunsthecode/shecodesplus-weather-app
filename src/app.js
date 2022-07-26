@@ -49,7 +49,6 @@ form.addEventListener("submit", showCity);
 // C/F Conversion//
 
 function convertToCelsius(event) {
-  event.preventDefault();
   let temperatureCurrent = document.querySelector("#current-temperature");
   temperatureFahrenheit.classList.remove("active-link");
   temperatureCelsius.classList.add("active-link");
@@ -124,12 +123,12 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row d-flex px-3 mt-auto flex-column" id="forecast">`;
+  let forecastHTML = `<div class="row" id="forecast">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="block col-5">
+        `<div class="col">
                             <small class="text-muted mb-0">${formatDay(
                               forecastDay.dt
                             )}</small>
@@ -147,7 +146,8 @@ function displayForecast(response) {
                   
                 </div>
               </div>
-            </div>`;
+               
+           `;
     }
   });
 
@@ -168,4 +168,3 @@ function getForecast(coordinates) {
 
 let celsiusTemp = null;
 searchCity("Hong Kong");
-displayForecast();
