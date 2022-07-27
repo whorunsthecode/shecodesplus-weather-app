@@ -128,7 +128,7 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="col block d-flex flex-column">
+        `<div class="col m-2 block d-flex flex-column" >
                             <small class="text-muted mb-0">${formatDay(
                               forecastDay.dt
                             )}</small>
