@@ -257,8 +257,13 @@ a:active {
   margin-top: -40px;
 }
 
+.windspeed {
+  line-height: 10px;
+}
+
 .col {
-  border: thin solid #b7d6d6;
+  background: #b4e0fe;
+  border: thin solid #75c6fc;
   border-radius: 20px;
   padding: 0;
 }
@@ -268,7 +273,7 @@ a:active {
 }
 
 .line-break {
-  border-top: thin solid #b7d6d6;
+  border-top: thin solid #97c3e0;
   margin-bottom: 20px;
 }
 .byKarmen {
@@ -279,7 +284,7 @@ a:active {
 }
 
 .footer {
-  color: blue;
+  color: rgb(44, 44, 227);
 }
 
 .footer:hover {
