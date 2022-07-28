@@ -37,7 +37,7 @@ body {
 .large-font {
   font-size: 65px;
   font-weight: 300;
-  line-height: 40px;
+  line-height: 55px;
   text-align: center;
 }
 
@@ -223,12 +223,12 @@ input {
 }
 
 .fahrenheit-link {
-  top: 15px;
+  top: 25px;
   right: -20px;
 }
 
 .celsius-link {
-  top: -10px;
+  top: -2px;
   right: -22px;
 }
 
@@ -258,9 +258,8 @@ a:active {
 }
 
 .col {
-  border: thin solid #e4dbf8;
+  border: thin solid #b7d6d6;
   border-radius: 20px;
-
   padding: 0;
 }
 
